@@ -10,10 +10,18 @@ class App extends React.Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Recruitment App - Step 1</h2>
+          <h4>To get started, enter your email address.</h4>
         </div>
-        <p className="App-intro">
-          To get started, enter your email address.
-        </p>
+        <div className="App-nav">
+          <ul>
+            <li><Link to="/add">Add</Link></li>
+            <li><Link to="/list">List</Link></li>
+            <li><Link to="/login">Login</Link></li>
+          </ul>
+        </div>
+        <div className="content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
