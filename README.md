@@ -1,2 +1,9 @@
 # clouds-stepone-app
-Simple three page app written per spec.
+Building a sample app for the first step in the recruitment process.
+
+## How to install?
+TODO
+
+## How to run?
+TODO
+
