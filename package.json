@@ -2,10 +2,13 @@
   "name": "clouds-stepone-app",
   "version": "0.1.0",
   "private": false,
+  "license": "GPL-3.0",
+  "author": "Robert Obreczarek",
   "devDependencies": {
     "react-scripts": "0.8.4"
   },
   "dependencies": {
+    "flux": "^3.1.2",
     "react": "^15.4.1",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
@@ -16,5 +19,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robreczarek/clouds-stepone-app.git"
+
   }
 }
