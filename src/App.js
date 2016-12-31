@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Logout from './Logout';
 import Nav from './Nav';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
           <h4>To get started, enter your email address.</h4>
         </div>
         <Nav />
+        <Logout />
         <div className="content">
           {this.props.children}
         </div>

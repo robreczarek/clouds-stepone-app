@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory, hashHistory, IndexRoute, Link, Router, Route } from 'react-router';
+import { hashHistory, IndexRoute, Router, Route } from 'react-router';
 
 import './index.css';
 
 import App from './App';
 import Add from './Add';
-import Auth from './Auth';
 import Detail from './Detail';
 import List from './List';
 import Login from './Login';

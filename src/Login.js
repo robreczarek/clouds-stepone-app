@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './Login.css';
+import { hashHistory, browserHistory, Router, Route, Link, withRouter } from 'react-router'
 
 class Login extends Component {
+
   constructor(props) {
     super(props);
 
@@ -10,8 +12,10 @@ class Login extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.state.email = event.target.email;
+    localStorage.email = event.target.email;
+    this.props.router.replace('/list');
   }
+
   render() {
     return (
         <div className="loginBox">
@@ -32,4 +36,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
