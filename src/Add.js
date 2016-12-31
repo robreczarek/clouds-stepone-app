@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 
 class Add extends Component {
+
+  componentWillMount() {
+    if (!localStorage.email) {
+      this.props.router.replace('/login');
+    }
+  }
 
   render() {
     return (<div>Add</div>);
@@ -8,4 +15,4 @@ class Add extends Component {
 
 }
 
-export default Add;
+export default withRouter(Add);

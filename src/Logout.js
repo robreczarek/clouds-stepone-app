@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Logout.css';
 
-import { hashHistory, browserHistory, Router, Route, Link, withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 class Logout extends Component {
 

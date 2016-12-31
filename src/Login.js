@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
-import { hashHistory, browserHistory, Router, Route, Link, withRouter } from 'react-router'
+
+import { withRouter } from 'react-router';
 
 class Login extends Component {
 
