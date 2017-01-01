@@ -14,4 +14,4 @@ Make sure you are in the folder where the code was downloaded to before proceedi
 ```
 npm start
 ```
-Once the script is ready, point your browser to http://localhost:3000/
+Once the script is ready, point your browser to [http://localhost:3000/](http://localhost:3000/)
