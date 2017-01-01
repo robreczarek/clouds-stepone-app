@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import logo from './logo.svg';
 import './App.css';
@@ -7,14 +8,6 @@ import Logout from './Logout';
 import Nav from './Nav';
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      email: ''
-    };
-  }
 
   render() {
     return (

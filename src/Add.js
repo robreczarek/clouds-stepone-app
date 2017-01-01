@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 class Add extends Component {
 
@@ -10,7 +11,15 @@ class Add extends Component {
   }
 
   render() {
-    return (<div>Add</div>);
+    return (
+      <div>
+        <h3>Add Record</h3>
+
+        <form>
+          <input type="text" />
+        </form>
+      </div>
+    );
   }
 
 }
