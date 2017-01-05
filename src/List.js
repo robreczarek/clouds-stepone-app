@@ -4,8 +4,15 @@ import Formsy from 'formsy-react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
+import UserTable from './UserTable'
 
 class List extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.submitForm = this.submitForm.bind(this);
+  }
 
   componentWillMount() {
     if (!localStorage.email) {
@@ -32,6 +39,10 @@ class List extends Component {
               label="Add"
             />
           </Formsy.Form>
+        </MuiThemeProvider>
+
+        <MuiThemeProvider muiTheme={getMuiTheme()}>
+          <UserTable />
         </MuiThemeProvider>
 
       </div>
