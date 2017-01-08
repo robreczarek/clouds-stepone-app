@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import Formsy from 'formsy-react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {indigo50, indigo100, indigo200, indigo300, indigo400, indigo500, indigo600,
   indigo700, indigo800, indigo900, indigoA100, indigoA200, indigoA400, indigoA700} from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
-import MenuItem from 'material-ui/MenuItem';
-import { FormsyCheckbox, FormsyDate, FormsyRadio, FormsyRadioGroup,
-    FormsySelect, FormsyText, FormsyTime, FormsyToggle, FormsyAutoComplete } from 'formsy-material-ui/lib';
+import { FormsyText } from 'formsy-material-ui/lib';
 
 import './Login.css';
 
@@ -55,7 +52,7 @@ class Login extends Component {
             Login
           </h3>
 
-          <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+          <MuiThemeProvider muiTheme={muiTheme}>
             <Paper>
               <Formsy.Form
                 onSubmit={this.handleSubmit}

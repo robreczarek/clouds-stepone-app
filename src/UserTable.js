@@ -1,22 +1,7 @@
 import React from 'react';
-import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
   from 'material-ui/Table';
-import TextField from 'material-ui/TextField';
-import Toggle from 'material-ui/Toggle';
 import Moment from 'moment';
-
-const styles = {
-  propContainer: {
-    width: 200,
-    overflow: 'hidden',
-    margin: '20px auto 0',
-  },
-  propToggleHeader: {
-    margin: '20px auto 10px',
-  },
-};
-
-const tableData = JSON.parse(localStorage.getItem('tableData')) || [];
 
 export default class UserTable extends React.Component {
 
@@ -34,6 +19,7 @@ export default class UserTable extends React.Component {
       deselectOnClickaway: false,
       showCheckboxes: false,
       height: 'inherit',
+      tableData: JSON.parse(localStorage.getItem('tableData')) || []
     };
   }
 
@@ -65,7 +51,7 @@ export default class UserTable extends React.Component {
             showRowHover={this.state.showRowHover}
             stripedRows={this.state.stripedRows}
           >
-            {tableData.map( (row, index) => (
+            {this.state.tableData.map( (row, index) => (
               <TableRow key={index} selected={row.selected}>
                 <TableRowColumn>{row.email}</TableRowColumn>
                 <TableRowColumn>{row.text}</TableRowColumn>
