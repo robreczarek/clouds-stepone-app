@@ -3,6 +3,7 @@ import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow,
   from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
+import Moment from 'moment';
 
 const styles = {
   propContainer: {
@@ -15,33 +16,7 @@ const styles = {
   },
 };
 
-const tableData = [
-  {
-    email: 'robert@obreczarek.com',
-    text: 'Not all who wander are lost',
-    hash: '',
-    timestamp: Date.now(),
-  },{
-    email: 'joormotha@gmail.com',
-    text: 'What doesn\'t kill you makes you stronger',
-    hash: '',
-    timestamp: Date.now(),
-  },
-  {
-    email: 'httpworkshop@yahoo.com',
-    text: 'Fear is the mind killer',
-    hash: '',
-    timestamp: Date.now(),
-  },{
-    email: 'rob@needanative.com',
-    text: 'Perfect is the enemy of done',
-    hash: '',
-    timestamp: Date.now(),
-  },
-
-
-
-];
+const tableData = JSON.parse(localStorage.getItem('tableData')) || [];
 
 export default class UserTable extends React.Component {
 
@@ -95,7 +70,7 @@ export default class UserTable extends React.Component {
                 <TableRowColumn>{row.email}</TableRowColumn>
                 <TableRowColumn>{row.text}</TableRowColumn>
                 <TableRowColumn>{row.hash}</TableRowColumn>
-                <TableRowColumn>{row.timestamp}</TableRowColumn>
+                <TableRowColumn>{Moment(row.timestamp).format('D MMM YYYY h:mm:ss')}</TableRowColumn>
               </TableRow>
               ))}
           </TableBody>

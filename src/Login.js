@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import Formsy from 'formsy-react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {indigo50, indigo100, indigo200, indigo300, indigo400, indigo500, indigo600,
+  indigo700, indigo800, indigo900, indigoA100, indigoA200, indigoA400, indigoA700} from 'material-ui/styles/colors';
+import {fade} from 'material-ui/utils/colorManipulator';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import MenuItem from 'material-ui/MenuItem';
@@ -10,6 +14,26 @@ import { FormsyCheckbox, FormsyDate, FormsyRadio, FormsyRadioGroup,
     FormsySelect, FormsyText, FormsyTime, FormsyToggle, FormsyAutoComplete } from 'formsy-material-ui/lib';
 
 import './Login.css';
+
+const muiTheme = getMuiTheme({
+    palette: {
+        primary1Color: indigo50,
+        primary2Color: indigo100,
+        primary3Color: indigo200,
+        accent1Color: indigo300,
+        accent2Color: indigo400,
+        accent3Color: indigo500,
+        textColor: indigo600,
+        alternateTextColor: indigo700,
+        canvasColor: indigo800,
+        borderColor: indigo900,
+        disabledColor: fade(indigoA100, 0.3),
+        pickerHeaderColor: indigoA200,
+        clockCircleColor: fade(indigoA400, 0.07),
+        shadowColor: indigoA700,
+    },
+});
+
 
 class Login extends Component {
 
@@ -19,8 +43,8 @@ class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    localStorage.email = event.target.email;
+  handleSubmit(formData) {
+    localStorage.setItem('email', formData.email);
     this.props.router.replace('/list');
   }
 
@@ -31,7 +55,7 @@ class Login extends Component {
             Login
           </h3>
 
-          <MuiThemeProvider muiTheme={getMuiTheme()}>
+          <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
             <Paper>
               <Formsy.Form
                 onSubmit={this.handleSubmit}

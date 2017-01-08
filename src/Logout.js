@@ -12,29 +12,17 @@ class Logout extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      canSubmit: false
-    };
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
-    localStorage.email = '';
+    localStorage.removeItem('email');
     this.props.router.replace('/login');
-  }
-
-  submitForm(data) {
-    alert(JSON.stringify(data, null, 4));
-  }
-
-  notifyFormError(data) {
-    console.error('Form error:', data);
   }
 
   render() {
 
-    if (localStorage.email) {
+    if (localStorage.getItem('email')) {
       return (
         <div className="logoutBox">
 

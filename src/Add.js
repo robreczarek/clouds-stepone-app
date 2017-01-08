@@ -11,10 +11,34 @@ import { FormsyCheckbox, FormsyDate, FormsyRadio, FormsyRadioGroup,
 
 class Add extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   componentWillMount() {
-    if (!localStorage.email) {
+    if (!localStorage.getItem('email')) {
       this.props.router.replace('/login');
     }
+  }
+
+  handleSubmit(formData) {
+
+    let tableData = JSON.parse(localStorage.getItem('tableData')) || [];
+
+    let input = {
+      email: localStorage.getItem('email'),
+      text: formData.user_input,
+      hash: formData.user_input,
+      timestamp: Date.now(),
+    };
+
+    tableData.push(input);
+
+    localStorage.setItem('tableData', JSON.stringify(tableData));
+
+    this.props.router.replace('/list');
   }
 
   render() {
@@ -25,13 +49,14 @@ class Add extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme()}>
           <Paper>
             <Formsy.Form
+              onSubmit={this.handleSubmit}
             >
               <FormsyText
                 name="user_input"
-                validations="isWords"
+                validations="isAlphanumeric,minLength:1,maxLength:255"
                 required
-                hintText="Add some text"
-                floatingLabelText="Input"
+                hintText="Input up to 255 characters"
+                floatingLabelText="Add text"
               />
               <RaisedButton
                 type="submit"

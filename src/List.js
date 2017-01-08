@@ -15,7 +15,7 @@ class List extends Component {
   }
 
   componentWillMount() {
-    if (!localStorage.email) {
+    if (!localStorage.getItem('email')) {
       this.props.router.replace('/login');
     }
   }
@@ -25,7 +25,6 @@ class List extends Component {
   }
 
   render() {
-//hash, input, userEmail, creationDate
     return (
       <div>
         <h3>List</h3>

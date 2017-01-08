@@ -15,7 +15,6 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Recruitment App - Step 1</h2>
-          <h4>To get started, enter your email address.</h4>
         </div>
         <Nav />
         <Logout />
