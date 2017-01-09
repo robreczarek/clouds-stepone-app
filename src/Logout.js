@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import Formsy from 'formsy-react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -17,6 +18,7 @@ class Logout extends Component {
 
   handleSubmit(e) {
     localStorage.removeItem('email');
+    this.setState({email: ''});
     this.props.router.replace('/login');
   }
 
@@ -26,7 +28,7 @@ class Logout extends Component {
       return (
         <div className="logoutBox">
 
-          <MuiThemeProvider muiTheme={getMuiTheme()}>
+          <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
             <Formsy.Form
               onSubmit={this.handleSubmit}
             >

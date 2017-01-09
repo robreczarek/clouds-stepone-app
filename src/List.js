@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import Formsy from 'formsy-react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
 import UserTable from './UserTable'
 
 class List extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.submitForm = this.submitForm.bind(this);
-  }
 
   componentWillMount() {
     if (!localStorage.getItem('email')) {
@@ -20,34 +13,16 @@ class List extends Component {
     }
   }
 
-  submitForm() {
-      this.props.router.replace('/add');
-  }
-
   render() {
     return (
       <div>
-        <h3>List</h3>
-
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
-          <Formsy.Form
-            onSubmit={this.submitForm}
-          >
-            <RaisedButton
-              type="submit"
-              label="Add"
-            />
-          </Formsy.Form>
-        </MuiThemeProvider>
-
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
           <UserTable />
         </MuiThemeProvider>
-
       </div>
     );
-
   }
+
 }
 
 export default withRouter(List);

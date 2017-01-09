@@ -23,3 +23,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.section-box {
+  background-color: #555;
+  width: 40%;
+  text-align: center;
+  padding: 15px;
+}

@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import Formsy from 'formsy-react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import { FormsyText } from 'formsy-material-ui/lib';
+
+const style = {
+  padding: 20,
+};
 
 class Add extends Component {
 
@@ -41,18 +46,19 @@ class Add extends Component {
 
   render() {
     return (
-      <div>
+      <div className="section-box">
         <h3>Add Record</h3>
 
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
-          <Paper>
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+          <Paper
+            style={style}
+          >
             <Formsy.Form
               onSubmit={this.handleSubmit}
             >
               <FormsyText
                 name="user_input"
-                validations="isAlphanumeric,minLength:1,maxLength:255"
-                required
+                validations="isAlphanumeric,maxLength:255"
                 hintText="Input up to 255 characters"
                 floatingLabelText="Add text"
               />
