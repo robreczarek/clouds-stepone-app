@@ -27,6 +27,7 @@
 .section-box {
   background-color: #555;
   width: 40%;
+  min-width: 290px;
   text-align: center;
   padding: 15px;
 }

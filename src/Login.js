@@ -24,7 +24,6 @@ class Login extends Component {
 
   handleSubmit(formData) {
     localStorage.setItem('email', formData.email);
-    this.setState({email: formData.email});
     this.props.router.replace('/list');
   }
 

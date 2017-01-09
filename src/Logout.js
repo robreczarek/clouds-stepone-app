@@ -18,7 +18,6 @@ class Logout extends Component {
 
   handleSubmit(e) {
     localStorage.removeItem('email');
-    this.setState({email: ''});
     this.props.router.replace('/login');
   }
 

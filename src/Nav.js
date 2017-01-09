@@ -14,10 +14,9 @@ class Nav extends Component {
     super(props);
 
     this.state = {
-      index: 1,
+      index: 2,
       fixedIndex: 1,
       inverseIndex: 1,
-      email: localStorage.getItem('email')
     };
 
   }
@@ -36,18 +35,18 @@ class Nav extends Component {
 
   render() {
 
-    if (this.state.email) {
+    if (localStorage.getItem('email')) {
       return (
         <div className="Nav">
+          <div className="Greeting">
+            Hello {localStorage.getItem('email')}
+          </div>
           <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-            <Tabs index={this.state.inverseIndex} onChange={this.handleInverseTabChange} inverse>
+            <Tabs onChange={this.handleInverseTabChange}>
               <Tab value={0} label='Add' containerElement={<Link to="/add" />}></Tab>
               <Tab value={1} label='List' containerElement={<Link to="/list" />}></Tab>
             </Tabs>
           </MuiThemeProvider>
-          <div className="Greeting">
-            Hello {this.state.email}
-          </div>
         </div>
       )
     } else {

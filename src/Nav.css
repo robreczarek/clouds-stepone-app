@@ -22,3 +22,10 @@
   color: #FFF;
   text-decoration: none;
 }
+
+.Greeting {
+  padding-left: 20;
+  padding-bottom: 20;
+  float: left;
+  background-color: #191919;
+}
