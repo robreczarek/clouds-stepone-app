@@ -7,6 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import { FormsyText } from 'formsy-material-ui/lib';
+import Hash from './Hash';
 
 const style = {
   padding: 20,
@@ -33,7 +34,7 @@ class Add extends Component {
     let input = {
       email: localStorage.getItem('email'),
       text: formData.user_input,
-      hash: formData.user_input,
+      hash: Hash(formData.user_input),
       timestamp: Date.now(),
     };
 
