@@ -11,7 +11,7 @@ class Nav extends Component {
     super(props);
 
     this.state = {
-      index: 2,
+      index: 1,
     };
 
     this.handleTabChange = this.handleTabChange.bind(this);
@@ -23,12 +23,11 @@ class Nav extends Component {
   };
 
   render() {
-
     if (localStorage.getItem('email')) {
       return (
         <div className="Nav">
           <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-            <Tabs index={this.state.index} onChange={this.handleTabChange}>
+            <Tabs value={this.state.index} onChange={this.handleTabChange}>
               <Tab value={0} label='Add' containerElement={<Link to="/add" />}></Tab>
               <Tab value={1} label='List' containerElement={<Link to="/list" />}></Tab>
             </Tabs>
@@ -38,7 +37,6 @@ class Nav extends Component {
     } else {
       return (null)
     }
-
   }
 }
 

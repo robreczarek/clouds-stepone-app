@@ -22,6 +22,12 @@ class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    if (localStorage.getItem('email')) {
+      this.props.router.replace('/list');
+    }
+  }
+
   handleSubmit(formData) {
     localStorage.setItem('email', formData.email);
     this.props.router.replace('/list');
