@@ -31,3 +31,17 @@
   text-align: center;
   padding: 15px;
 }
+
+.notification {
+  -webkit-animation: 5s ease 0s normal forwards 1 fade;
+  animation: 5s ease 0s normal forwards 1 fade;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding: 20px;
+}
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}

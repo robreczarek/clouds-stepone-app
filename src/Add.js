@@ -42,7 +42,7 @@ class Add extends Component {
 
     localStorage.setItem('tableData', JSON.stringify(tableData));
 
-    this.props.router.replace('/list');
+    this.props.router.replace('/list?success=true');
   }
 
   render() {
