@@ -55,13 +55,20 @@ class Add extends Component {
             style={style}
           >
             <Formsy.Form
-              onSubmit={this.handleSubmit}
+              onValidSubmit={this.handleSubmit}
             >
               <FormsyText
                 name="user_input"
-                validations="isAlphanumeric,maxLength:255"
+                validations={{
+                  maxLength: 255,
+                  isAlphanumeric: true
+                }}
                 hintText="Input up to 255 characters"
                 floatingLabelText="Add text"
+                validationErrors={{
+                  maxLength: 'The data you entered is too long',
+                  isAlphanumeric: 'The data you entered must be alphanumeric'
+                }}
               />
               <RaisedButton
                 type="submit"

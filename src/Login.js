@@ -45,7 +45,7 @@ class Login extends Component {
               style={style}
             >
               <Formsy.Form
-                onSubmit={this.handleSubmit}
+                onValidSubmit={this.handleSubmit}
               >
                 <FormsyText
                   floatingLabelText="Email address"
