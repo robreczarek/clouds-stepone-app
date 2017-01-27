@@ -1,4 +1,4 @@
-# clouds-stepone-app
+# recruitment-app
 Building a sample app for the first step in the recruitment process.
 
 ## How to install?
